@@ -1,4 +1,4 @@
-package com.grimolizzi.Hogwarts.model;
+package com.grimolizzi.hogwarts.model;
 
 
 public enum House {

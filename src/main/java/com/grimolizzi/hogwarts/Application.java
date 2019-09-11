@@ -1,4 +1,4 @@
-package com.grimolizzi.Hogwarts;
+package com.grimolizzi.hogwarts;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

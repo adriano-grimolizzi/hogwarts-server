@@ -1,13 +1,13 @@
-package com.grimolizzi.Hogwarts.wizards;
+package com.grimolizzi.hogwarts.wizards;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.grimolizzi.Hogwarts.GenericController;
-import com.grimolizzi.Hogwarts.GenericService;
-import com.grimolizzi.Hogwarts.model.Wizard;
+import com.grimolizzi.hogwarts.GenericController;
+import com.grimolizzi.hogwarts.GenericService;
+import com.grimolizzi.hogwarts.model.Wizard;
 
 @RestController
 @RequestMapping("/wizards")

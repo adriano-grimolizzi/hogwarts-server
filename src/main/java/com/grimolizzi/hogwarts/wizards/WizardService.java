@@ -1,4 +1,4 @@
-package com.grimolizzi.Hogwarts.wizards;
+package com.grimolizzi.hogwarts.wizards;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,9 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.grimolizzi.Hogwarts.GenericService;
-import com.grimolizzi.Hogwarts.model.House;
-import com.grimolizzi.Hogwarts.model.Wizard;
+import com.grimolizzi.hogwarts.GenericService;
+import com.grimolizzi.hogwarts.model.House;
+import com.grimolizzi.hogwarts.model.Wizard;
 
 @Service
 public class WizardService implements GenericService<Wizard> {

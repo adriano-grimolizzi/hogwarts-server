@@ -1,4 +1,4 @@
-package com.grimolizzi.Hogwarts;
+package com.grimolizzi.hogwarts;
 
 import java.util.List;
 

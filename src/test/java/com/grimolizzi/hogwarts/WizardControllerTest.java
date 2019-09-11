@@ -1,4 +1,4 @@
-package com.grimolizzi.Hogwarts;
+package com.grimolizzi.hogwarts;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
@@ -22,13 +22,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.grimolizzi.Hogwarts.model.House;
-import com.grimolizzi.Hogwarts.model.Wizard;
-import com.grimolizzi.Hogwarts.wizards.WizardController;
+import com.grimolizzi.hogwarts.model.House;
+import com.grimolizzi.hogwarts.model.Wizard;
+import com.grimolizzi.hogwarts.wizards.WizardController;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(WizardController.class)
 public class WizardControllerTest {
+
+	private static final String URL_TEMPLATE = "/wizards";
 	
 	private static final String WIZARD_1_ID = "001";
 	private static final String WIZARD_1_NAME = "Harry";
@@ -47,8 +49,8 @@ public class WizardControllerTest {
 	public void shouldGetAll() throws Exception {
 		
 		given(this.service.getAll()).willReturn(getMockList());
-		
-		this.mvc.perform(get("/wizards")
+
+		this.mvc.perform(get(URL_TEMPLATE)
 				.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("$", hasSize(2)))
@@ -67,7 +69,7 @@ public class WizardControllerTest {
 		
 		given(this.service.get(mockedWizard.getId())).willReturn(mockedWizard);
 		
-		this.mvc.perform(get("/wizards")
+		this.mvc.perform(get(URL_TEMPLATE)
 				.param("id", mockedWizard.getId())
 				.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
@@ -85,7 +87,7 @@ public class WizardControllerTest {
 		String jsonBody = new ObjectMapper()
 				.writeValueAsString(mockedWizard);
 		
-		this.mvc.perform(post("/wizards")
+		this.mvc.perform(post(URL_TEMPLATE)
 				.content(jsonBody)
 				.contentType(MediaType.APPLICATION_JSON_UTF8))
 				.andExpect(status().isOk());

@@ -1,4 +1,4 @@
-package com.grimolizzi.Hogwarts.model;
+package com.grimolizzi.hogwarts.model;
 
 public class Wizard {
 	private String id;
@@ -42,10 +42,21 @@ public class Wizard {
 	}
 	@Override
 	public boolean equals(Object o) {
+
+		if (o == null)
+			return false;
+
+		if (this.getClass() != o.getClass())
+			return false;
 		
 		Wizard wizard = (Wizard) o;
+
 		return this.id.equals(wizard.getId())
 				&& this.name.equals(wizard.getName())
 				&& this.surname.equals(wizard.getSurname());
-	}	
+	}
+	@Override
+	public int hashCode() {
+		return this.id.hashCode();
+	}
 }
