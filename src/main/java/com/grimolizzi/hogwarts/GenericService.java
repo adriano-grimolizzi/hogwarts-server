@@ -1,12 +1,24 @@
 package com.grimolizzi.hogwarts;
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public interface GenericService<T> {
+@Service
+public class GenericService<T> {
 
-	public List<T> getAll();
+	@Autowired
+	private GenericDao<T> dao;
 
-	public T get(String id);
+	public List<T> getAll() {
+		return this.dao.getAll();
+	}
 
-	public void create(T t);
+	public T get(String id) {
+		return this.dao.get(id);
+	}
+
+	public void create(T t) {
+		this.dao.create(t);
+	}
 }

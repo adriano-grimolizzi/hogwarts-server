@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.grimolizzi</groupId>
-	<artifactId>hogwarts</artifactId>
+	<artifactId>hogwarts-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<parent>
